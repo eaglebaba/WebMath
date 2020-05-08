@@ -1,9 +1,10 @@
 # Image calculator
 solves equations written on via hand on the web
+![operation](image_calc_process.jpg)
 
 
 ## Overview
-Use TensorFlow to generate short sequences of music with a [Restricted Boltzmann Machine](http://deeplearning4j.org/restrictedboltzmannmachine.html).
+Use TensorFlow to solve handwritten mathematical equations.
 
 ## Dependencies
 

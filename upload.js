@@ -9,5 +9,5 @@ $(document).ready(function(e){
 });
 
 $.ajax({
-    url: './app.py'
+    url: './saveimg.py'
 });
