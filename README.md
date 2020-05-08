@@ -27,6 +27,7 @@ Use [pip](https://pypi.python.org/pypi/pip) to install any missing dependencies 
 ## Basic Usage
 To solve equations, simply clone this directory and run.
 ```
+pip install -r requirements.txt
 python app.py
 ```
 Note: This work was trained on mnist dataset to recognize digits
