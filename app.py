@@ -44,6 +44,7 @@ def solve():
 
         predict_numbers()
         predict_operation()
+        solve_equation()
 
     return jsonify(result)
 
@@ -125,6 +126,14 @@ def predict_operation():
         ans = "unrecognized"
     result['op'] = str(ans)
     result['op_perc'] = str(class_percentage)
+
+def solve_equation():
+    global result
+    x = result['num_1']
+    y = result['op']
+    z = result['num_2']
+    sol = eval(f"{x}{y}{z}")
+    result['solution'] = str(sol)
 
 
 if __name__ == "__main__":

@@ -90,6 +90,7 @@ function init() {
     }
 
     function saveCanvasToImg(canvas1, canvas2, canvas3){
+        document.getElementById('working_loader').style.display = 'block';
         var img1 = canvas1.toDataURL("image/png");
         var math_symbol = canvas2.toDataURL("image/png");
         var img2 = canvas3.toDataURL("image/png");
@@ -105,8 +106,21 @@ function init() {
         xhr.setRequestHeader("Content-Type", "application/json");
         xhr.onreadystatechange = function(){
             if (xhr.readyState === 4 && xhr.status === 200) {
-                var json = JSON.parse(xhr.responseText);
-                console.log(json);
+                response = JSON.parse(xhr.responseText);
+                console.log(response)
+                // hide the working loader after receiving the response
+                document.getElementById('working_loader').style.display = 'none';
+
+                document.getElementById('first_prediction').textContent = response['num_1'];
+                document.getElementById('first_percentage').textContent = response['num_1_perc'];
+
+                document.getElementById('operation_prediction').textContent = response['op'];
+                document.getElementById('operation_percentage').textContent = response['op_perc'];
+
+                document.getElementById('second_prediction').textContent = response['num_2'];
+                document.getElementById('second_percentage').textContent = response['num_2_perc'];
+
+                document.getElementById('ans').textContent = response['solution'];
             }
         }
         xhr.send(img_data);
