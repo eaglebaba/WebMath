@@ -1,6 +1,5 @@
-# Image calculator
+Calculator
 solves equations written on via hand on the web
-![operation](image_calc_process.jpg)
 
 
 ## Overview
